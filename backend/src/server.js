@@ -15,7 +15,9 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
-app.use(cors());    // Allow frontend to access backend
+app.use(cors({
+  origin: "https://sales-leaderboard-pi.vercel.app/"
+}));    // Allow frontend to access backend
 app.use(express.json());    // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true }));    // Parse form data
 
