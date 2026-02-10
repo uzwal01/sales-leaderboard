@@ -16,7 +16,7 @@ export default function Home() {
   setLoading(true);
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/leaderboard`
+      `${process.env.NEXT_PUBLIC_API_URL}/leaderboard`
     );
     const data = await response.json();
     if (data.success) {
@@ -33,7 +33,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sales`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/sales`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
